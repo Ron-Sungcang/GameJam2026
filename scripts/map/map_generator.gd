@@ -26,10 +26,13 @@ var map_array: Array[Array]
 
 func generate_map() -> Array[Array]:
 	map_array = _generate_initial_grid()
+	var starting_point := _get_starting_points()
+	
+	print(starting_point)
 	
 	return []
 
-func _generate_initial_grid():
+func _generate_initial_grid() -> Array[Array]:
 	var result: Array[Array] = []
 	for i in FLOORS:
 		var adjacent_rooms: Array[MapIconInfo] = []
@@ -49,3 +52,18 @@ func _generate_initial_grid():
 			
 		result.append(adjacent_rooms)
 	return result
+
+func _get_starting_points() -> Array[int]:
+	var y_coord: Array[int]
+	var unique_points: int = 0
+	
+	while unique_points < 2:
+		unique_points = 0
+		y_coord = []
+		for i in PATHS:
+			var starting_point := randi_range(0, MAP_WIDTH - 1)
+			if not y_coord.has(starting_point):
+				unique_points += 1
+			y_coord.append(starting_point)
+	return y_coord
+		
