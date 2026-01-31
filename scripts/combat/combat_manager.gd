@@ -11,6 +11,8 @@ enum CombatState{
 
 var curr_state: CombatState
 
+@export var ui: combat_ui
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enter_combat()
@@ -32,6 +34,7 @@ func execute_state() -> void:
 		CombatState.ENEMY_INPUTS:
 			enemy_inputs()
 		CombatState.PLAYER_INPUTS:
+			ui.enable_user_ui()
 			player_inputs()
 		CombatState.ACTION:
 			action()
@@ -39,9 +42,10 @@ func execute_state() -> void:
 			end_turn()
 
 func enter_combat() -> void:
+	ui.disable_user_ui()
 	print("Entering combat")
 	
-	#TODO: Actions when entering combat, such as getting units involved in combat
+	#TODO: Actions when entering combat, getting stage info such as units involved in combat
 	
 	change_state(CombatState.START_COMBAT)
 
