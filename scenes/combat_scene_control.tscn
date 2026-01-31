@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4gy5tqjru4yt"]
+[gd_scene load_steps=5 format=3 uid="uid://b4gy5tqjru4yt"]
 
 [ext_resource type="Script" uid="uid://bd76oq76w1sbf" path="res://scripts/combat/combat_manager.gd" id="1_pa0fl"]
 [ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="2_1fmcv"]
@@ -9,9 +9,7 @@ texture = ExtResource("2_1fmcv")
 texture_margin_left = 1071.0
 texture_margin_top = 101.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3f4b"]
-
-[node name="CombatScene" type="Control" node_paths=PackedStringArray("ui")]
+[node name="CombatScene" type="Control" node_paths=PackedStringArray("ui", "player_position", "enemy_positions")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +19,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_pa0fl")
 ui = NodePath("CombatUI/CombatControl")
+player_position = NodePath("CombatUI/PlayerPosition")
+enemy_positions = NodePath("CombatUI/EnemyPositions")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
@@ -68,22 +68,20 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_54g3h")
 layout_mode = 2
 text = "Click Here"
 
+[node name="PlayerPosition" type="HBoxContainer" parent="CombatUI"]
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 0.3
+anchor_bottom = 0.815
+alignment = 1
+
 [node name="EnemyPositions" type="HBoxContainer" parent="CombatUI"]
 anchors_preset = -1
 anchor_left = 0.3
-anchor_top = 0.2
+anchor_top = 0.3
 anchor_right = 1.0
 anchor_bottom = 0.815
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="PartyPosition" type="PanelContainer" parent="CombatUI"]
-anchors_preset = -1
-anchor_top = 0.2
-anchor_right = 0.3
-anchor_bottom = 0.815
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_l3f4b")
+alignment = 1

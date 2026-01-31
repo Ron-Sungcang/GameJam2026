@@ -12,6 +12,8 @@ enum CombatState{
 var curr_state: CombatState
 
 @export var ui: combat_ui
+@export var player_position: HBoxContainer
+@export var enemy_positions: HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,13 +43,26 @@ func execute_state() -> void:
 			end_turn()
 
 func enter_combat() -> void:
+	UnitManagerTestScene.load_enemy_res()
+	
 	ui.disable_user_ui()
 	ui.set_button_action(complete_player_action)
+	
+	set_enemy_starting_position()
+	
 	print("Entering combat")
 	
 	#TODO: Actions when entering combat, getting stage info such as units involved in combat
 	
 	change_state(CombatState.START_COMBAT)
+
+func set_enemy_starting_position() -> void:
+	if UnitManagerTestScene.enemy_units == null:
+		print("UnitManager has an empty array of enemy units")
+		return
+		
+	for enemy in UnitManagerTestScene.enemy_units:
+		enemy.unit_sprite.reparent(enemy_positions, false)
 
 func complete_player_action() -> void:
 	if(curr_state != CombatState.PLAYER_INPUTS):

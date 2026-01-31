@@ -1,10 +1,12 @@
 extends Node
 
+class_name enemy_unit
+
 var enemy_resource: enemy_res
 var current_hp: int
 var enemy_skills: Array[enemy_action]
 
-@export var unit_sprite: Sprite2D
+@export var unit_sprite: TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

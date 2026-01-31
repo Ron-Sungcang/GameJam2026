@@ -15,6 +15,10 @@ run/main_scene="uid://b4gy5tqjru4yt"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+UnitManagerTestScene="*res://scripts/units/unit_manager_test_scene.tscn"
+
 [dotnet]
 
 project/assembly_name="gamejam"

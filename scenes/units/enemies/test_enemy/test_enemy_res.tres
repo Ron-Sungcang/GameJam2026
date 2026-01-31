@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cenybi56dj8sx" path="res://scripts/units/enemy/enemy_res.gd" id="2_8a4cu"]
 [ext_resource type="Resource" uid="uid://b8780vao3bewl" path="res://entities/actions/enemy_skills/test_enemy_skills/test_enemy_action_res.tres" id="2_hyqj6"]
 [ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="3_8a4cu"]
-[ext_resource type="PackedScene" uid="uid://dqshuv2yxrdp6" path="res://scenes/units/enemies/test_enemy/test_enemy.tscn" id="3_eocke"]
+[ext_resource type="PackedScene" uid="uid://bhypg73qqaabj" path="res://scenes/units/enemies/test_enemy/test_enemy_scene.tscn" id="4_hyqj6"]
 
 [resource]
 script = ExtResource("2_8a4cu")
@@ -14,5 +14,5 @@ max_hp = 6
 unit_attack = 3
 unit_min_speed = 1
 unit_max_speed = 3
-unit_scene = ExtResource("3_eocke")
+unit_scene = ExtResource("4_hyqj6")
 unit_texture = ExtResource("3_8a4cu")
