@@ -9,4 +9,4 @@ class_name unit_res
 @export var unit_max_speed: int
 
 @export var unit_scene: PackedScene
-@export var unit_sprite: Texture2D
+@export var unit_texture: Texture2D

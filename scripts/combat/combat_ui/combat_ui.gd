@@ -15,9 +15,11 @@ func _ready() -> void:
 #	pass
 
 func disable_user_ui() -> void:
+	print("Disabling combat UI...")
 	user_ui.visible = false
 
 func enable_user_ui() -> void:
+	print("Enabling combat UI...")
 	user_ui.visible = true
 
 func set_button_action(action: Callable) -> void:

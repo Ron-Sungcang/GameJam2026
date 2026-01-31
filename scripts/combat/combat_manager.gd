@@ -34,7 +34,6 @@ func execute_state() -> void:
 		CombatState.ENEMY_INPUTS:
 			enemy_inputs()
 		CombatState.PLAYER_INPUTS:
-			ui.enable_user_ui()
 			player_inputs()
 		CombatState.ACTION:
 			action()
@@ -43,32 +42,56 @@ func execute_state() -> void:
 
 func enter_combat() -> void:
 	ui.disable_user_ui()
+	ui.set_button_action(complete_player_action)
 	print("Entering combat")
 	
 	#TODO: Actions when entering combat, getting stage info such as units involved in combat
 	
 	change_state(CombatState.START_COMBAT)
 
+func complete_player_action() -> void:
+	if(curr_state != CombatState.PLAYER_INPUTS):
+		print("Not in player input state")
+		return
+	
+	print("Player inputs complete")
+	change_state(CombatState.ACTION)
+
 #TODO: Actions during start combat, includes things like a "Start Combat" alert
 func start_combat() -> void:
-	return
+	
+	change_state(CombatState.TURN_ORDER)
 	
 #TODO: Set the turn order of unit actions before the start of turn
 func turn_order() -> void:
-	return
+	print("Turn order")
+	change_state(CombatState.ENEMY_INPUTS)
+	#return
 
 #TODO: Actions of enemy ai
 func enemy_inputs() -> void:
-	return
+	print("Enemy Input")
+	change_state(CombatState.PLAYER_INPUTS)
+	#return
 
 #TODO: Actions of player
 func player_inputs() -> void:
-	return
+	print("Player Input")
+	ui.enable_user_ui()
 
 #TODO: Complete the actions selected by both Player and Enemy
 func action() -> void:
-	return
+	print("Action state")
+	
+	#Disable UI before comitting actions
+	ui.disable_user_ui()
+	#TODO: Complete unit actions
+	
+	change_state(CombatState.END_TURN)
 	
 #TODO: End turn, prepare for the start of next turn
 func end_turn() -> void:
-	return
+	print("Turn completed")
+	#TODO: Do actions related to a turn ending, before starting a new turn order
+	
+	change_state(CombatState.TURN_ORDER)
