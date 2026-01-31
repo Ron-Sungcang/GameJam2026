@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://lgs726avph8e"]
+
+[ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="1_ik0t7"]
+[ext_resource type="Script" uid="uid://bd76oq76w1sbf" path="res://scripts/combat/combat_manager.gd" id="1_ofoda"]
+
+[node name="CombatScene" type="Node2D"]
+script = ExtResource("1_ofoda")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 1157.0
+offset_bottom = 658.0
+mouse_filter = 2
+texture = ExtResource("1_ik0t7")
+
+[node name="CombatUI" type="CanvasLayer" parent="."]
+
+[node name="CombatControl" type="Control" parent="CombatUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TestButton" type="Button" parent="CombatUI/CombatControl"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 200.0
+offset_right = 586.0
+offset_bottom = 231.0
+text = "Click Here"
