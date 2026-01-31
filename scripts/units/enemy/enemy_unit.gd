@@ -36,3 +36,17 @@ func get_unit_max_speed() -> int:
 	
 func get_unit_min_speed() -> int:
 	return enemy_resource.unit_min_speed
+
+
+func _on_enemy_sprite_mouse_entered() -> void:
+	print("Mouse Entered") # Replace with function body.
+	
+	#Instead of mouse update here, have a UI manager autoload of sorts to handle mouse changes 
+	#Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+
+func _on_enemy_sprite_mouse_exited() -> void:
+	print("Mouse Exited") # Replace with function body.
+	
+	#Instead of mouse update here, have a UI manager autoload of sorts to handle mouse changes 
+	#Input.set_default_cursor_shape(Input.CURSOR_ARROW)

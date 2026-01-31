@@ -21,3 +21,6 @@ offset_bottom = 40.0
 texture = ExtResource("2_1rtoh")
 expand_mode = 2
 stretch_mode = 3
+
+[connection signal="mouse_entered" from="EnemySprite" to="." method="_on_enemy_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="EnemySprite" to="." method="_on_enemy_sprite_mouse_exited"]
