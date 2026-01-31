@@ -32,6 +32,11 @@ func generate_map() -> Array[Array]:
 		var current_j := j
 		for i in FLOORS - 1:
 			current_j = _setup_connection(i, current_j)
+	
+	_setup_boss_room()
+	_setup_random_weight()
+	_setup_room_types()
+	
 	var i := 0
 	for floor in map_array:
 		print("floor %s" % i)
@@ -40,7 +45,7 @@ func generate_map() -> Array[Array]:
 		)
 		print(used_icons)
 		i += 1
-	return []
+	return map_array
 
 func _generate_initial_grid() -> Array[Array]:
 	var result: Array[Array] = []
@@ -107,3 +112,58 @@ func _would_cross_existing_path(i: int, j: int, next: MapIconInfo) -> bool:
 				return true
 	
 	return false
+
+func _setup_boss_room() -> void:
+	var middle := floori(MAP_WIDTH * 0.5)
+	var boss_room := map_array[FLOORS -1][middle] as MapIconInfo
+	
+	for j in MAP_WIDTH:
+		var current_icon = map_array[FLOORS - 2][j] as MapIconInfo
+		if current_icon.next_icons:
+			current_icon.next_icons = [] as Array[MapIconInfo]
+			current_icon.next_icons.append(boss_room)
+			
+	boss_room.type = MapIconInfo.Type.BOSS
+
+func _setup_random_room_weights() -> void:
+	random_room_weights[MapIconInfo.Type.COMMON] = COMMON_WEIGHT
+	random_room_weights[MapIconInfo.Type.REST] = COMMON_WEIGHT + REST_WEIGHT
+	random_room_weights[MapIconInfo.Type.ELITE] = COMMON_WEIGHT + REST_WEIGHT + ELITE_WEIGHT
+	
+	random_room_type_total_weight = random_room_weights[MapIconInfo.Type.ELITE]
+	
+func _setup_room_types() -> void:
+	for icon: MapIconInfo in map_array[0]:
+		if icon.next_icons.size() > 0:
+			icon.type = MapIconInfo.Type.COMMON
+	
+	# Last floor before the boss is always a campfire
+	for icon: MapIconInfo in map_array[13]:
+		if icon.next_icons.size() > 0:
+			icon.type = MapIconInfo.Type.REST
+	
+	# rest of rooms
+	for current_floor in map_array:
+		for icon: MapIconInfo in current_floor:
+			for next_icon: MapIconInfo in icon.next_icons:
+				if next_icon.type == MapIconInfo.Type.NOT_ASSIGNED:
+					_set_room_randomly(next_icon)
+					
+func _set_room_randomly(icon_to_set: MapIconInfo) -> void:
+	var rest_below_4 := true
+	var consecutive_rest := true
+	var rest_on_13 := true
+	
+	var type_candidate: MapIconInfo.Type
+	
+	while rest_below_4 or consecutive_rest or rest_on_13:
+		type_candidate = _get_random_room_type_by_weight()
+		
+		var is_rest := type_candidate == MapIconInfo.Type.REST
+		var has_rest_parent := _room_has_parent_of_type(icon_to_set, MapIconInfo.Type.REST)
+		
+		rest_below_4 = is_rest and icon_to_set.row < 3
+		consecutive_rest = is_rest and has_rest_parent
+		rest_on_13 = is_rest and icon_to_set.row == 12
+	
+	icon_to_set.type = type_candidate
