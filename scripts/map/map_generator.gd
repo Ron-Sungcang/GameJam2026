@@ -34,7 +34,7 @@ func generate_map() -> Array[Array]:
 			current_j = _setup_connection(i, current_j)
 	
 	_setup_boss_room()
-	_setup_random_weight()
+	_setup_random_room_weights()
 	_setup_room_types()
 	
 	var i := 0
@@ -187,3 +187,11 @@ func _room_has_parent_of_type(icon: MapIconInfo, type: MapIconInfo.Type) -> bool
 			return true
 	
 	return false	
+
+func _get_random_room_type_by_weight() -> MapIconInfo.Type:
+	var rand_roll := randf_range(0.0, random_room_type_total_weight)
+	
+	for type: MapIconInfo.Type in random_room_weights:
+		if random_room_weights[type] > rand_roll:
+			return type
+	return MapIconInfo.Type.COMMON
