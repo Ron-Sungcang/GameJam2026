@@ -167,3 +167,23 @@ func _set_room_randomly(icon_to_set: MapIconInfo) -> void:
 		rest_on_13 = is_rest and icon_to_set.row == 12
 	
 	icon_to_set.type = type_candidate
+
+func _room_has_parent_of_type(icon: MapIconInfo, type: MapIconInfo.Type) -> bool:
+	var parents: Array[MapIconInfo] = []
+	
+	# Left side
+	if icon.column > 0 and icon.row > 0:
+		var parent_candidate := map_array[icon.row - 1][icon.column - 1] as MapIconInfo
+		if parent_candidate.next_icons.has(icon):
+			parents.append(parent_candidate)
+			
+	if icon.row > 0:
+		var parent_candidate := map_array[icon.row -1][icon.column] as MapIconInfo
+		if parent_candidate.next_icons.has(icon):
+			parents.append(parent_candidate)
+	
+	for parent: MapIconInfo in parents:
+		if parent.type == type:
+			return true
+	
+	return false	
