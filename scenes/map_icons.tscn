@@ -1,18 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtea6if57xmmg"]
+[gd_scene load_steps=4 format=3 uid="uid://dtea6if57xmmg"]
 
 [ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="1_5dmlm"]
+[ext_resource type="Script" uid="uid://cycosn514yvr" path="res://scenes/Icon.gd" id="1_6ohjk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xrb7"]
-size = Vector2(118, 125)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dmlm"]
+size = Vector2(124, 122)
 
 [node name="map_icons" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_6ohjk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
-position = Vector2(-2, -0.5)
-shape = SubResource("RectangleShape2D_8xrb7")
+shape = SubResource("RectangleShape2D_5dmlm")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("1_5dmlm")
