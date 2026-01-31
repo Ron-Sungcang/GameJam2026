@@ -1,8 +1,18 @@
 extends Area2D
 
+@export
+var icon_info : MapIconInfo
+
+@onready 
+var sprite := $Sprite2D
+
+var common_enemies = []
+var elite_enemies = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if icon_info and icon_info.sprite:
+		sprite.texture = icon_info.sprite 
 	input_pickable = true
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exit)
