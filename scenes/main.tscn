@@ -1,22 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://deotlyst3v2p8"]
+[gd_scene load_steps=2 format=3 uid="uid://deotlyst3v2p8"]
 
 [ext_resource type="Script" uid="uid://c2kb1ryotl32s" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dtea6if57xmmg" path="res://scenes/map_icons.tscn" id="2_sugp2"]
-[ext_resource type="Resource" uid="uid://d2b10740ap07y" path="res://resources/map_icons/Rest_icon.tres" id="3_jyhfs"]
-[ext_resource type="Resource" uid="uid://nfm3kfreaeau" path="res://resources/map_icons/Common_icon.tres" id="3_sugp2"]
-[ext_resource type="Resource" uid="uid://cfungcqwj14iv" path="res://resources/map_icons/Elite_Icon.tres" id="4_tbgi4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o5qli")
-
-[node name="map_icons" parent="." instance=ExtResource("2_sugp2")]
-position = Vector2(288, 353)
-icon_info = ExtResource("3_sugp2")
-
-[node name="map_icons2" parent="." instance=ExtResource("2_sugp2")]
-position = Vector2(558, 258)
-icon_info = ExtResource("4_tbgi4")
-
-[node name="map_icons3" parent="." instance=ExtResource("2_sugp2")]
-position = Vector2(738, 176)
-icon_info = ExtResource("3_jyhfs")
