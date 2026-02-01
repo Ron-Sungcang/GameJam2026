@@ -29,8 +29,12 @@ func run() -> void:
 	
 	match event.action:
 		Actions.FIGHT:
+			target.healhurt(-1)
+			pass
+		Actions.MASK:
 			pass
 		_:
 			pass
 	await(get_tree().create_timer(0.5).timeout)
+	
 	run()

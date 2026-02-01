@@ -1,5 +1,7 @@
 class_name Enemy extends TextureButton
 
+
+#@export var damage: int = 15
 @export var data: BattleActor = null :
 	set(value):
 		data = value

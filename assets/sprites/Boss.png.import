@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5qe3jwpso435"
-path="res://.godot/imported/Wrath.png-488342777a9380157897c5e2bb4b207a.ctex"
+uid="uid://cyewe4lbpl0yt"
+path="res://.godot/imported/Boss.png-837f504a47c3b23faa019a4b86372a23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Wrath.png"
-dest_files=["res://.godot/imported/Wrath.png-488342777a9380157897c5e2bb4b207a.ctex"]
+source_file="res://assets/sprites/Boss.png"
+dest_files=["res://.godot/imported/Boss.png-837f504a47c3b23faa019a4b86372a23.ctex"]
 
 [params]
 

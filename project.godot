@@ -22,6 +22,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+Data="*res://data.gd"
 
 [dotnet]
 

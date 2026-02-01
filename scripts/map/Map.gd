@@ -101,4 +101,6 @@ func _on_map_room_selected(icon: MapIconInfo) -> void:
 	
 	if icon.type == MapIconInfo.Type.REST:
 		get_tree().change_scene_to_file("res://scenes/rest.tscn")
+	elif icon.type == MapIconInfo.Type.COMMON:
+		get_tree().change_scene_to_file("res://scenes/combat_scene.tscn")
 	
