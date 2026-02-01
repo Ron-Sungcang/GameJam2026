@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://6enyxty5o7fj"]
+
+[ext_resource type="PackedScene" uid="uid://b6msomw5rf4le" path="res://scenes/player_window.tscn" id="1_nrndr"]
+[ext_resource type="Script" uid="uid://cd2grxqh4sg2o" path="res://scenes/player_windows.gd" id="1_wpf7o"]
+
+[node name="PlayerWindows" type="HBoxContainer" unique_id=1705290422]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_wpf7o")
+
+[node name="Player Window" parent="." unique_id=328725056 instance=ExtResource("1_nrndr")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

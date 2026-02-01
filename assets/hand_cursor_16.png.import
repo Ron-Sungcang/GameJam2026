@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://v3y6uxb874w0"
-=======
-uid="uid://cstpnw60jsi64"
->>>>>>> 0dec62ade46d36f25d2211de1d9f8f89b0def801
-path="res://.godot/imported/Greed.png-4890497c8f8ab2c5a4a7666d069a4329.ctex"
+uid="uid://byrlf5s26ho3b"
+path="res://.godot/imported/hand_cursor_16.png-1eac60ff0a8a2b21c1ca14528262eb9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Greed.png"
-dest_files=["res://.godot/imported/Greed.png-4890497c8f8ab2c5a4a7666d069a4329.ctex"]
+source_file="res://assets/hand_cursor_16.png"
+dest_files=["res://.godot/imported/hand_cursor_16.png-1eac60ff0a8a2b21c1ca14528262eb9a.ctex"]
 
 [params]
 

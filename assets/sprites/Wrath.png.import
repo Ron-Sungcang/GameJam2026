@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://c1lihugnx66ff"
+=======
+uid="uid://ky84gmxqi201"
+>>>>>>> 0dec62ade46d36f25d2211de1d9f8f89b0def801
 path="res://.godot/imported/Wrath.png-488342777a9380157897c5e2bb4b207a.ctex"
 metadata={
 "vram_texture": false
