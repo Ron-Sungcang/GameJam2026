@@ -1,5 +1,5 @@
 class_name MapGenerator
-extends Node2D
+extends Node
 
 const X_DIST := 30
 const Y_DIST := 25
