@@ -1,7 +1,7 @@
 extends Resource
 class_name MapIconInfo
 
-enum Type { ELITE, COMMON, REST, BOSS, NOT_ASSIGNED }
+enum Type { NOT_ASSIGNED, COMMON, REST, ELITE, BOSS }
 
 @export
 var type: Type

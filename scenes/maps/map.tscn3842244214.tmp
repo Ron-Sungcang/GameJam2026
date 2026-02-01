@@ -19,9 +19,3 @@ offset = Vector2(580, 330)
 
 [node name="mapGenerator" type="Node" parent="."]
 script = ExtResource("2_ce1uw")
-
-[node name="Background" type="CanvasLayer" parent="."]
-
-[node name="BackgroundColor" type="TextureRect" parent="Background"]
-offset_right = 40.0
-offset_bottom = 40.0

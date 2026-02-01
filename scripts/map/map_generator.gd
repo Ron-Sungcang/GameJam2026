@@ -46,6 +46,7 @@ func _generate_initial_grid() -> Array[Array]:
 		
 		for j in MAP_WIDTH:
 			var current_icon := MapIconInfo.new()
+			print("current icon type %s" % MapIconInfo.Type)
 			var offset := Vector2(randf(), randf()) * RANDOMNESS
 			current_icon.position = Vector2(j* X_DIST, i * -Y_DIST) + offset
 			current_icon.row = i
@@ -181,6 +182,7 @@ func _room_has_parent_of_type(icon: MapIconInfo, type: MapIconInfo.Type) -> bool
 	return false	
 
 func _get_random_room_type_by_weight() -> MapIconInfo.Type:
+	print("Get random room called")
 	var rand_roll := randf_range(0.0, random_room_type_total_weight)
 	
 	for type: MapIconInfo.Type in random_room_weights:
