@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://d28h0xy0i2xvq"]
+[gd_scene load_steps=2 format=3 uid="uid://d28h0xy0i2xvq"]
+
+[ext_resource type="Script" uid="uid://b3bervwpk8xvq" path="res://scenes/rest.gd" id="1_dvpk5"]
 
 [node name="rest" type="Node2D"]
+script = ExtResource("1_dvpk5")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -32,3 +35,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Upgrade Stats"
+
+[connection signal="pressed" from="Control/PanelContainer/rest_button" to="." method="_on_rest_button_pressed"]
