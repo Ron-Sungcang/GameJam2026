@@ -37,14 +37,6 @@ func generate_map() -> Array[Array]:
 	_setup_random_room_weights()
 	_setup_room_types()
 	
-	var i := 0
-	for floor in map_array:
-		print("floor %s" % i)
-		var used_icons = floor.filter(
-			func(room: MapIconInfo): return room.next_icons.size() > 0
-		)
-		print(used_icons)
-		i += 1
 	return map_array
 
 func _generate_initial_grid() -> Array[Array]:

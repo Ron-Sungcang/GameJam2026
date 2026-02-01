@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg784bpfeob7f"]
+[gd_scene load_steps=5 format=3 uid="uid://dtea6if57xmmg"]
 
 [ext_resource type="Script" uid="uid://7sxy5vv8y1n5" path="res://scripts/map/Icon.gd" id="1_6ohjk"]
 [ext_resource type="Script" uid="uid://cycosn514yvr" path="res://scripts/map/AreaIcon.gd" id="2_6ohjk"]
