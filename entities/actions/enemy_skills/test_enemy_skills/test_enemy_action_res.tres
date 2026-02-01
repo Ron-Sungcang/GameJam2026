@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="enemy_action_res" load_steps=4 format=3 uid="uid://b8780vao3bewl"]
+
+[ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="1_ayb14"]
+[ext_resource type="Script" uid="uid://df7pnanth11ky" path="res://scripts/units/enemy/enemy_actions/enemy_action_res.gd" id="1_hio28"]
+[ext_resource type="PackedScene" uid="uid://b5gmsgk8hv36" path="res://entities/actions/enemy_skills/test_enemy_skills/action_1_test_enemy.tscn" id="2_4f6en"]
+
+[resource]
+script = ExtResource("1_hio28")
+description = "This is a action #1 for test enemy"
+enemy_action_script = ExtResource("2_4f6en")
+action_image = ExtResource("1_ayb14")
