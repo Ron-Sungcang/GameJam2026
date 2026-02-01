@@ -1,6 +1,8 @@
 class_name Map
 extends Node2D
 
+#signal enter_rest
+
 const SCROLL_SPD := 15
 const MAP_ICON = preload("res://scenes/maps/icon_room.tscn")
 const MAP_CONNECTOR = preload("res://scenes/maps/icon_connector.tscn")
@@ -94,7 +96,11 @@ func _on_map_room_selected(icon: MapIconInfo) -> void:
 	for map_icon: AreaIcon in icons.get_children():
 		if map_icon.room_icon.row == icon.row:
 			map_icon.available = false
+	#hide_map()
 	
 	last_room = icon
 	floors_climbed += 1
-	
+	#Global.map_exited.emit(icon)
+	if icon.type == MapIconInfo.Type.REST:
+		Global.enter_rest.emit()
+	unlock_next_icons()

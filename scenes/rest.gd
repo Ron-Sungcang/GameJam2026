@@ -8,9 +8,16 @@ func rest() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide()
+	Global.enter_rest.connect(_on_room_entered)
 	pass # Replace with function body.
 
+func hide_rest() -> void:
+	hide()
 
+
+func _on_room_entered() -> void:
+	show()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -18,4 +25,5 @@ func _process(delta: float) -> void:
 
 func _on_rest_button_pressed() -> void:
 	rest()
+	hide_rest()
 	# Do something to go back to 

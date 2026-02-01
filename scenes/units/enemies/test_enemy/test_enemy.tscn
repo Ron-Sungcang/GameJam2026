@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqshuv2yxrdp6"]
+[gd_scene load_steps=3 format=3 uid="uid://dqshuv2yxrdp6"]
 
 [ext_resource type="Script" uid="uid://cp6xit4xxgsum" path="res://scripts/units/enemy/enemy_unit.gd" id="1_wjt0o"]
+[ext_resource type="Texture2D" uid="uid://v13irlhan77m" path="res://assets/sprites/Greed.png" id="2_23r85"]
 
 [node name="TestEnemy" type="Node2D" node_paths=PackedStringArray("unit_sprite")]
+light_mask = 4
+visibility_layer = 4
 script = ExtResource("1_wjt0o")
 unit_sprite = NodePath("EnemySprite")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_23r85")

@@ -1,12 +1,9 @@
-extends Node2D
-@onready var rest = $rest
-@onready var map = $map
+extends Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#map.enter_rest.connect(rest._on_room_entered)
 	pass # Replace with function body.
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4gy5tqjru4yt"]
+[gd_scene load_steps=5 format=3 uid="uid://bxbnrcjabfnpc"]
 
 [ext_resource type="Script" uid="uid://bd76oq76w1sbf" path="res://scripts/combat/combat_manager.gd" id="1_pa0fl"]
 [ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="2_1fmcv"]
@@ -10,6 +10,8 @@ texture_margin_left = 1071.0
 texture_margin_top = 101.0
 
 [node name="CombatScene" type="Control" node_paths=PackedStringArray("ui", "player_position", "enemy_positions")]
+light_mask = 2
+visibility_layer = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
