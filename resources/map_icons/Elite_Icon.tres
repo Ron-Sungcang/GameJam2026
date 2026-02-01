@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MapIconInfo" load_steps=3 format=3 uid="uid://cfungcqwj14iv"]
+
+[ext_resource type="Script" uid="uid://b104vyxkjeq3o" path="res://scripts/map/MapIconInfo.gd" id="1_1ub7v"]
+[ext_resource type="Texture2D" uid="uid://svltpfvwwwih" path="res://assets/Elite_Icon.png" id="2_7lus0"]
+
+[resource]
+script = ExtResource("1_1ub7v")
+id = "0"
+type = "Elite"
+sprite = ExtResource("2_7lus0")
