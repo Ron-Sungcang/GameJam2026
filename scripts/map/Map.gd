@@ -76,7 +76,6 @@ func create_icon(icon: MapIconInfo) -> void:
 	icons.add_child(new_icon)
 	new_icon.room_icon = icon
 	new_icon.selected.connect(_on_map_room_selected)
-	connect_lines(icon)
 	
 	if icon.selected and icon.row < floors_climbed:
 		new_icon.show_selected()

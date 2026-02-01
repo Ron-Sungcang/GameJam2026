@@ -4,6 +4,6 @@
 
 [node name="IconConnector" type="Line2D"]
 texture_repeat = 2
-points = PackedVector2Array(236, 377, 380, 270, 546, 265, 623, 231)
+points = PackedVector2Array(236, 377, 380, 270, 546, 265)
 texture = ExtResource("1_l4hiu")
 texture_mode = 1
