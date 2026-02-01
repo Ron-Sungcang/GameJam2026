@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 UnitManagerTestScene="*res://scripts/units/unit_manager_test_scene.tscn"
+Global="*res://scripts/Global.gd"
 
 [dotnet]
 
