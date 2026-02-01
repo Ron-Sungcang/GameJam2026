@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://lgs726avph8e"]
+[gd_scene load_steps=0 format=3 uid="uid://lgs726avph8e"]
 
 [ext_resource type="Script" uid="uid://c5bfcrpyb2dy6" path="res://scripts/combat_scene.gd" id="1_m17q1"]
 [ext_resource type="Script" uid="uid://cj82krnmf41mi" path="res://scenes/event_queue.gd" id="2_ikfks"]
