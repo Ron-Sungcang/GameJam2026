@@ -8,12 +8,21 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="gamejam"
 run/main_scene="uid://clyh3u4vs0fx2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+Data="*res://data.gd"
 
 [dotnet]
 
