@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7tup1ijq2vlm"]
+
+[ext_resource type="Script" uid="uid://cqjo481532te" path="res://scripts/rest.gd" id="1_dvpk5"]
+
+[node name="rest" type="Node2D"]
+script = ExtResource("1_dvpk5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.41615242, 0, 0.01673807, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="rest_button" type="Button" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Rest"
+
+[node name="stat_button" type="Button" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Upgrade Stats"
+
+[connection signal="pressed" from="Control/PanelContainer/rest_button" to="." method="_on_rest_button_pressed"]

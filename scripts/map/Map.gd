@@ -99,3 +99,6 @@ func _on_map_room_selected(icon: MapIconInfo) -> void:
 	floors_climbed += 1
 	unlock_next_icons()
 	
+	if icon.type == MapIconInfo.Type.REST:
+		get_tree().change_scene_to_file("res://scenes/rest.tscn")
+	
