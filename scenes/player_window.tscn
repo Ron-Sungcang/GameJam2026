@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b6msomw5rf4le"]
+
+[node name="Player Window" type="PanelContainer" unique_id=328725056]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=455477570]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="VBoxContainer" unique_id=1180785160]
+layout_mode = 2
+text = "PNAME"
+
+[node name="HP" type="Label" parent="VBoxContainer" unique_id=1560021704]
+layout_mode = 2
+text = "HP???"
+
+[node name="MP" type="Label" parent="VBoxContainer" unique_id=1962532739]
+layout_mode = 2
+text = "MP:???"

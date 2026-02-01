@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2du15ano2qh7"]
+
+[ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://assets/icon.svg" id="1_md0e3"]
+[ext_resource type="Script" uid="uid://cln60twjb8wyo" path="res://scripts/enemy.gd" id="2_4ra3w"]
+
+[node name="Enemy" type="TextureButton" unique_id=548664570]
+texture_normal = ExtResource("1_md0e3")
+script = ExtResource("2_4ra3w")
