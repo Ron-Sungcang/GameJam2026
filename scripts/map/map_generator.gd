@@ -36,7 +36,7 @@ func generate_map() -> Array[Array]:
 	_setup_boss_room()
 	_setup_random_room_weights()
 	_setup_room_types()
-	
+		
 	return map_array
 
 func _generate_initial_grid() -> Array[Array]:

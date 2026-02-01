@@ -1,23 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtea6if57xmmg"]
+[gd_scene load_steps=3 format=3 uid="uid://dtea6if57xmmg"]
 
-[ext_resource type="Script" uid="uid://7sxy5vv8y1n5" path="res://scripts/map/Icon.gd" id="1_6ohjk"]
-[ext_resource type="Script" uid="uid://cycosn514yvr" path="res://scripts/map/AreaIcon.gd" id="2_6ohjk"]
+[ext_resource type="PackedScene" uid="uid://bbkxxsmjnpyji" path="res://scenes/maps/icon_room.tscn" id="2_6ohjk"]
 [ext_resource type="Script" uid="uid://b1ect4mmlen32" path="res://scripts/map/map_generator.gd" id="3_t6y1e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dmlm"]
-size = Vector2(69, 67)
-
 [node name="map_icons" type="Node2D"]
-script = ExtResource("1_6ohjk")
-
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_6ohjk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-z_index = 1
-shape = SubResource("RectangleShape2D_5dmlm")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 
 [node name="mapGenerator" type="Node2D" parent="."]
 script = ExtResource("3_t6y1e")
+
+[node name="IconRoom" parent="." instance=ExtResource("2_6ohjk")]
