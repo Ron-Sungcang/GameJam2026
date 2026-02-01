@@ -8,7 +8,7 @@ const ICONS := {
 	MapIconInfo.Type.COMMON: [preload("res://assets/Common_Icon.png"), Vector2(0.6,0.6)],
 	MapIconInfo.Type.ELITE: [preload("res://assets/Elite_Icon.png"), Vector2(1.25,1.25)],
 	MapIconInfo.Type.REST: [preload("res://assets/Rest_Icon.png"), Vector2(0.45,0.45)],
-	MapIconInfo.Type.BOSS: [null, Vector2(1.25, 1.25)]
+	MapIconInfo.Type.BOSS: [preload("res://assets/Boss.png"), Vector2(1.45, 1.45)]
 }
 
 @onready

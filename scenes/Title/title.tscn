@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://clyh3u4vs0fx2"]
+
+[ext_resource type="Script" uid="uid://s0fxs3n0tmoa" path="res://scripts/Title.gd" id="1_6pw0v"]
+[ext_resource type="Texture2D" uid="uid://mu5fp8hwups1" path="res://assets/title.png" id="2_u73ie"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pw0v")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 376.0
+offset_right = 611.0
+offset_bottom = 432.0
+text = "START
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(577, 843)
+texture = ExtResource("2_u73ie")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 74.0
+offset_right = 636.0
+offset_bottom = 111.0
+text = "MASK OFF"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
