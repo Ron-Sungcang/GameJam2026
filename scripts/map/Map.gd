@@ -97,4 +97,5 @@ func _on_map_room_selected(icon: MapIconInfo) -> void:
 	
 	last_room = icon
 	floors_climbed += 1
+	unlock_next_icons()
 	

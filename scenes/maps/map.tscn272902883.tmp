@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtea6if57xmmg"]
+
+[ext_resource type="Script" uid="uid://dpqsdx2u4xf34" path="res://scripts/map/Map.gd" id="1_ry644"]
+[ext_resource type="Script" uid="uid://b1ect4mmlen32" path="res://scripts/map/map_generator.gd" id="2_ce1uw"]
+
+[node name="map" type="Node2D"]
+script = ExtResource("1_ry644")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Line" type="Node2D" parent="Visual"]
+unique_name_in_owner = true
+
+[node name="Icon" type="Node2D" parent="Visual"]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(580, 330)
+
+[node name="mapGenerator" type="Node" parent="."]
+script = ExtResource("2_ce1uw")
