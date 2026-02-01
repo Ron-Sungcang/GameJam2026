@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd8msug6i2iqf"]
+[gd_scene load_steps=8 format=3 uid="uid://dd8msug6i2iqf"]
 
 [ext_resource type="Script" path="res://scripts/combat_scene.gd" id="1_m17q1"]
-[ext_resource type="Script" uid="uid://cj82krnmf41mi" path="res://scenes/event_queue.gd" id="2_ikfks"]
+[ext_resource type="Script" path="res://scenes/event_queue.gd" id="2_ikfks"]
 [ext_resource type="Script" path="res://scripts/menu_APRIL_2025.gd" id="2_m2d54"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="3_m2d54"]
-[ext_resource type="PackedScene" path="res://scenes/player_windows.tscn" id="4_ikfks"]
+[ext_resource type="Texture2D" uid="uid://c80urx204bsiq" path="res://assets/image.png" id="3_0vylu"]
+[ext_resource type="PackedScene" uid="uid://d2du15ano2qh7" path="res://scenes/enemy.tscn" id="3_m2d54"]
+[ext_resource type="PackedScene" uid="uid://6enyxty5o7fj" path="res://scenes/player_windows.tscn" id="4_ikfks"]
 [ext_resource type="Resource" uid="uid://bglyqhdsjqn58" path="res://Enemies/enemy1.tres" id="6_ikfks"]
 
 [node name="Battle Scene" type="Control"]
@@ -19,14 +20,10 @@ script = ExtResource("1_m17q1")
 [node name="EventQueue" type="Node" parent="."]
 script = ExtResource("2_ikfks")
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(566, 323)
+scale = Vector2(0.30572915, 0.29999998)
+texture = ExtResource("3_0vylu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

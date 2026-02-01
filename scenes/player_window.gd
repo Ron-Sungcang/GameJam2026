@@ -13,7 +13,7 @@ var data: BattleActor = null:
 		if data:
 			if data.is_connected("hp_changed", _on_data_hp_changed):
 				data.hp_changed.disconnect(_on_data_hp_changed)
-			data = data.copy()
+			data = data
 			data.hp_changed.connect(_on_data_hp_changed)
 			player_name.text = data.name
 			hp_2.text = str(data.hp)
