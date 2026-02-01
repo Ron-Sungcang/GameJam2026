@@ -37,6 +37,8 @@ func _on_options_button_pressed(button: BaseButton, _index: int) -> void:
 		"Fight":
 			action = Actions.FIGHT
 			enemies.button_focus()
+		"Mask":
+			$MarginContainer/MaskMenu.show()
 		_:
 			pass
 

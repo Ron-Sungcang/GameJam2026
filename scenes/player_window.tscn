@@ -1,44 +1,55 @@
-[gd_scene load_steps=0 format=3 uid="uid://b6msomw5rf4le"]
+[gd_scene load_steps=4 format=3 uid="uid://j5mormvve11h"]
 
 [ext_resource type="Script" uid="uid://dew0uqusonfgc" path="res://scenes/player_window.gd" id="1_bmq3c"]
+[ext_resource type="Texture2D" uid="uid://v13irlhan77m" path="res://assets/sprites/Greed.png" id="2_4p5if"]
+[ext_resource type="Script" uid="uid://dlosy0c3yluu0" path="res://scenes/mask_update.gd" id="3_r8jcm"]
 
-[node name="Player" type="Button" unique_id=266472429]
+[node name="Player" type="Button"]
 offset_right = 57.0
 offset_bottom = 77.0
 script = ExtResource("1_bmq3c")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=328725056]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=455477570]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="PlayerName" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1180785160]
+[node name="PlayerName" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "PNAME"
 
-[node name="HP" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1362149731]
+[node name="HP" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HP" type="Label" parent="PanelContainer/VBoxContainer/HP" unique_id=1560021704]
+[node name="HP" type="Label" parent="PanelContainer/VBoxContainer/HP"]
 layout_mode = 2
 text = "HP: "
 
-[node name="HP2" type="Label" parent="PanelContainer/VBoxContainer/HP" unique_id=1902189358]
+[node name="HP2" type="Label" parent="PanelContainer/VBoxContainer/HP"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "???"
 horizontal_alignment = 2
 
-[node name="MP" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1346005095]
+[node name="MP" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MP" type="Label" parent="PanelContainer/VBoxContainer/MP" unique_id=1962532739]
+[node name="MP" type="Label" parent="PanelContainer/VBoxContainer/MP"]
 layout_mode = 2
 text = "MP: "
 
-[node name="MP2" type="Label" parent="PanelContainer/VBoxContainer/MP" unique_id=895063734]
+[node name="MP2" type="Label" parent="PanelContainer/VBoxContainer/MP"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "???"
 horizontal_alignment = 2
+
+[node name="Mask" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 10.0
+offset_right = 103.0
+offset_bottom = 50.0
+texture = ExtResource("2_4p5if")
+script = ExtResource("3_r8jcm")

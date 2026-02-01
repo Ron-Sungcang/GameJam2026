@@ -1,11 +1,54 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd8msug6i2iqf"]
+[gd_scene load_steps=19 format=3 uid="uid://dd8msug6i2iqf"]
 
-[ext_resource type="Script" path="res://scripts/combat_scene.gd" id="1_m17q1"]
+[ext_resource type="Script" uid="uid://c5bfcrpyb2dy6" path="res://scripts/combat_scene.gd" id="1_m17q1"]
 [ext_resource type="Script" uid="uid://cj82krnmf41mi" path="res://scenes/event_queue.gd" id="2_ikfks"]
 [ext_resource type="Script" path="res://scripts/menu_APRIL_2025.gd" id="2_m2d54"]
 [ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="3_m2d54"]
 [ext_resource type="PackedScene" path="res://scenes/player_windows.tscn" id="4_ikfks"]
+[ext_resource type="Texture2D" uid="uid://v13irlhan77m" path="res://assets/sprites/Greed.png" id="5_5qq3q"]
+[ext_resource type="Texture2D" uid="uid://ipfmgv7t0bxj" path="res://assets/sprites/Envy.png" id="6_g5ebj"]
 [ext_resource type="Resource" uid="uid://bglyqhdsjqn58" path="res://Enemies/enemy1.tres" id="6_ikfks"]
+[ext_resource type="Texture2D" uid="uid://dwwehetve3kdo" path="res://assets/sprites/Sloth.png" id="7_ohwxf"]
+[ext_resource type="Texture2D" uid="uid://c5qe3jwpso435" path="res://assets/sprites/Wrath.png" id="8_blj0x"]
+[ext_resource type="Texture2D" uid="uid://8thvk5v8gc6p" path="res://assets/sprites/Gluttony.png" id="9_6r8bj"]
+[ext_resource type="Texture2D" uid="uid://bo5mmrver0f8a" path="res://assets/sprites/Lust(masquerade).png" id="10_da1ml"]
+[ext_resource type="Texture2D" uid="uid://c0v4qvvgdsqs3" path="res://assets/sprites/pride_mask.png" id="11_lef5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aepks"]
+atlas = ExtResource("11_lef5q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff51q"]
+atlas = ExtResource("11_lef5q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcf8m"]
+atlas = ExtResource("11_lef5q")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dobui"]
+atlas = ExtResource("11_lef5q")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cto7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aepks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff51q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcf8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dobui")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Battle Scene" type="Control"]
 layout_mode = 3
@@ -70,6 +113,49 @@ text = "Run
 [node name="PlayerWindows" parent="MarginContainer" instance=ExtResource("4_ikfks")]
 layout_mode = 2
 size_flags_horizontal = 0
+
+[node name="MaskMenu" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("5_5qq3q")
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("6_g5ebj")
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("7_ohwxf")
+
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("8_blj0x")
+
+[node name="TextureButton5" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("9_6r8bj")
+
+[node name="TextureButton6" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("10_da1ml")
+
+[node name="TextureButton7" type="TextureButton" parent="MarginContainer/MaskMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/MaskMenu/TextureButton7"]
+position = Vector2(15.799995, 3.2000122)
+sprite_frames = SubResource("SpriteFrames_cto7h")
 
 [node name="Enemies" type="HBoxContainer" parent="." node_paths=PackedStringArray("buttons_container")]
 layout_mode = 1
